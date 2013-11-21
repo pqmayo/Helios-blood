@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Tales of Eclipse : Helios Blood</title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css">
+<script type="text/javascript" src="layout.js"></script>
+<script type="text/javascript" src="C1S11Dialogue.js"></script>
+<script type="text/javascript">
+function start(){
+	
+	onclickanim();
+	decmons();
+
+}
+var stopmons;
+function stopmonsanim(){
+	
+	stopmons = setInterval("monsmove()",300);
+
+	}
+function stopmonsanim1() {
+	
+	clearInterval(stopmons);
+	
+}
+
+var bax=0; counter = 0; 
+var move2right = 0;
+var move2left = 600;
+
+function monsmove() {
+	if(counter >=1 ) counter = 0; else counter ++;
+	
+	if (move2right == 220 || move2left == 220) { 
+		stopmonsanim1();
+		station();
+		dialogbox();
+		}
+	else {
+	
+	bax = 285 * counter;
+	if (bax == 0){dax =+ 285;}
+	move2right+=20;
+	move2left-=20;
+	vctx.drawImage(vi1,0,0,800,600);
+	drawmons1(bax,move2left);
+    drawmons2(bax,move2right);
+    
+	dctx.rect(20,500,760,80);
+	dctx.fillStyle = "rgba(25, 25, 25, 0.7)";
+	dctx.fill();
+	dctx.fillStyle="white";
+	dctx.font="20px Arial";
+	dctx.fillText(dialogue[13],30,520);
+	}
+}
+</script>
+</head>
+
+<body onload="start()" onclick="dialogbox()">
+<h1>Chapter 1, Eric Intrudes</h1>
+<h2>Scene no. 2</h2>
+<div class="container">
+<canvas id="canvas" width="800px" height="600px" style="border: 1px solid;">Your browser does not support
+HTML5 canvas
+</canvas>
+
+<img id="bg" alt="" width="800px" height="600px" src="backgrounds/rooftop.png">
+<img id="character" alt="" src="characters/asset2.png">
+<img id="character2" alt="" src="characters/RickSilo.png">
+<img id="mons1" alt="" src="characters/alvar.png">
+<img id="mons2" alt="" src="characters/rickvar.png">
+
+
+<table>
+<tr>
+<td><form method="get" action="Chapter2Scene10.html"><button type="submit">Back</button></form></td>
+
+<td><form method="get" action="ChapterSelect.html"><button type="submit">Home</button></form></td>
+
+<td><form method="get" action="Chapter2.html"><button type="submit">Next</button></form></td>
+</tr></table>
+
+</div>
+</body>
+</html>

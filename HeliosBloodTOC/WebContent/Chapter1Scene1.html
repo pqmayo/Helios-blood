@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Tales of Eclipse: Helios Blood</title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css">
+<script type="text/javascript" src="C1S1Dialogue.js"></script>
+<script type="text/javascript">
+var vc,vctx,vi1,vi2,vi3;
+
+
+function onclickanim() {
+	//alert("init()...");
+	vc=document.getElementById("canvas");
+	vctx = vc.getContext("2d");
+	
+	vi1 = document.getElementById("bg");
+	vctx.drawImage(vi1,0,0,800,600);
+	document.getElementById("bg").style.display = "none"; //hiding the img file
+	
+	vi2 = document.getElementById("character");
+	vctx.drawImage(vi2,0,0,0,0);
+	document.getElementById("character").style.display = "none"; //hiding the img file
+	
+	vi3 = document.getElementById("character2");
+	document.getElementById("character2").style.display = "none"; //hiding the img file
+	
+		
+}
+
+function go() {
+	onclickanim();
+	stopanim();
+}
+
+function startanim() {
+	if(stopanim !=null)  clearInterval(stopanim());
+	
+}
+
+function stopanim(){
+	
+	stopanim = setInterval("animation()",300);
+
+	}
+function stopanim1() {
+	
+	clearInterval(stopanim);
+	
+}
+
+function station() {
+	vctx.drawImage(vi1,0,0,800,600);
+	vctx.drawImage(vi3,0,0,240,400,300,200,200,200);
+}
+
+var dax=0; counter = 0; 
+var move2right = -100;
+var move2left = 600;
+
+function animation() {
+	if(counter >=1 ) counter = 0; else counter ++;
+	
+	if (move2left == 300) { 
+		station();
+		stopanim1();
+		}
+	else {
+	
+	dax = 240 * counter;
+	if (dax == 240){dax =+ 240;}
+	move2right+=10;
+	move2left-=20;
+	vctx.drawImage(vi1,0,0,800,600);
+	vctx.drawImage(vi2,dax,0,240,400,move2left,200,200,200);
+	}
+	
+
+}
+</script>
+
+</head>
+<h1 align="center">Tales Of Eclipse, Helios Blood</h1>
+<h2 align="center">Chapter 1: Eric Intrudes</h2>
+<h3 align="center">Scene 1:The Main Character gets to school and vows to be like his dad</h3>
+
+<body onload="go()" >
+<div class="container">
+<canvas width="800px" height="600px" id="canvas" onclick = "dialogbox()">Your browser does not support HTML5</canvas>
+
+<img id="bg" alt="" width="800px" height="600px" src="backgrounds/schoolgate.png">
+<img id="character" alt="" src="characters/wa1lky.png">
+<img id="character2" alt="" src="characters/Al walk.png">
+
+<audio src="sounds/thestorysofar.mp3" autoplay="autoplay"></audio>
+
+<table>
+<tr align="center">
+<td><form method="get" action="Chapter1.html"><button type="submit">Back</button></form></td>
+
+<td><form method="get" action="ChapterSelect.html"><button type="submit">Home</button></form></td>
+
+<td><form method="get" action="Chapter1scene2.html"><button type="submit">Next</button></form></td>
+</tr>
+</table>
+</div>
+
+
+
+</body>
+</html>

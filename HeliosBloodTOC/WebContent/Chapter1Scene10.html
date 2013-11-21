@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Tales Of Eclipse, Helios Blood</title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css">
+<style type="text/css">
+#anicanvas {
+border-width: 3px;
+border-style:outset;
+
+}
+
+#bg{display: none;}
+#daf{display: none}
+#daf1{display: none}
+</style>
+<script type="text/javascript">
+var vc,vctx,vi1,vi2;
+var dc,dctx,diagbox;
+var clickcount = 0;
+
+function onclick() {
+	//alert("init()...");
+	vc=document.getElementById("anicanvas");
+	vctx = vc.getContext("2d");
+	vi1 = document.getElementById("bg");
+	vctx.drawImage(vi1,0,0,800,600);
+	
+	vi2 = document.getElementById("daf");
+	vctx.drawImage(vi2,0,0,0,0);
+	vi3 = document.getElementById("daf1");
+	vctx.drawImage(vi2,300,0,100,100,300,200,100,200);
+	
+		
+}
+
+function init(){
+	onclick();
+	stopanim();
+}
+
+
+
+function stopanim(){
+	
+	stopanim = setInterval("animation()",100);
+	}
+function stopanim1() {
+	
+	clearInterval(stopanim);
+	
+}
+
+var dax=0; counter = 0; sizew=640;sizeh=360;
+var move2right = -100;
+var move2left = 600;
+function animation() {
+	
+	if (move2right == 450 || move2left == 250) { stopanim()}
+	
+	move2right+=10;
+	move2left-=13;
+	vctx.drawImage(vi1,0,0,800,600);
+	vctx.drawImage(vi3,0,0,1068,692,move2left,50,700,600);
+	vctx.drawImage(vi2,dax,0,640,360,move2right,400,640,360);
+	
+	dc=document.getElementById("anicanvas");
+	dctx=dc.getContext("2d");
+	dctx.rect(20,500,760,80);
+	dctx.fillStyle = "rgba(25, 25, 25, 0.7)";
+	dctx.fill();
+	dctx.fillStyle="white";
+	dctx.font="20px Arial";
+	dctx.fillText("Toph: Blindness is not an impairment in the battle of wits.",30,520);
+
+
+
+
+	
+
+}
+
+
+</script>
+
+</head>
+<body onload = "init()">
+<h1 align="center">Tales Of Eclipse, Helios Blood</h1>
+<h2 align="center">Chapter 1: Eric Intrudes</h2>
+<h3 align="center">Scene 2:Everyone arrives</h3>
+
+<div class="container">
+<canvas id="anicanvas" width="800" height="600" >
+Browser does not support html5
+</canvas>
+
+<img id ="bg" alt="" src="backgrounds/tbg.jpg" width="800" height="600"> <br/>
+<img id="daf1" alt="" src="characters/toph.png" >
+<img id="daf" alt="" src="backgrounds/tp1.png" >
+
+
+
+<p>Students catching wind of This Batch of Varchar Users has put this as one of the most interesting group of Programmers ever assembled
+</p>
+<br>
+
+<table>
+<tr align="center">
+<td><form method="get" action="Chapter1Scene9.html"><button type="submit">Back</button></form></td>
+
+<td><form method="get" action="ChapterSelect.html"><button type="submit">Home</button></form></td>
+
+<td><form method="get" action="Chapter1Scene11.html"><button type="submit">Next</button></form></td>
+</tr>
+</table>
+
+
+</div>
+</body>
+</html>

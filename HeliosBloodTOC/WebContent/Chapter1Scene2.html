@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Tales of Eclipse: Helios Blood</title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css">
+
+
+<script type="text/javascript">
+var dc,dctx,diagbox;
+var clickcount = 0;
+var dialogue = new Array();
+var vc,vctx,vi1,vi2;
+function init() {
+	//alert("init()...");
+	vc=document.getElementById("canvas");
+	vctx = vc.getContext("2d");
+	vi1 = document.getElementById("bg");
+	vctx.drawImage(vi1,0,0,800,600);
+	document.getElementById("bg").style.display = "none"; //hiding the img file
+	vctx.globalAlpha = 0.5;
+	vi2 = document.getElementById("character");
+	vctx.drawImage(vi2,0,0,0,0);
+	document.getElementById("character").style.display = "none"; //hiding the img file
+	
+		
+}
+
+function go(){
+	init();
+	stopanim();
+	
+}
+
+function startanim() {
+	if(stopanim !=null) clearInterval(stopanim);
+	stopanim = setInterval("animation()",100)
+}
+
+function stopanim(){
+	
+	stopanim = setInterval("animation()",100);
+	}
+function stopanim1() {
+	
+	clearInterval(stopanim);
+	
+}
+
+var dax=0; counter = 0; sizew=640;sizeh=360;
+var moveleft = 600;
+function animation() {
+	
+	if (moveleft == -640) { moveleft = 800;}
+	
+	dax = 100 * counter;
+	moveleft-=10;
+	vctx.drawImage(vi1,0,0,800,600);
+	vctx.drawImage(vi2,dax,0,640,360,moveleft,350,640,200);
+	
+	dc=document.getElementById("canvas");
+	dctx=dc.getContext("2d");
+	dctx.rect(20,500,760,80);
+	dctx.fillStyle = "rgba(25, 25, 25, 0.7)";
+	dctx.fill();
+	dctx.fillStyle="white";
+	dctx.font="20px Arial";
+	dctx.fillText("Student with Glasses : It's them the promising varchar users.",30,520);
+	
+
+}
+</script>
+</head>
+
+<body onload="go()">
+<h1 align="center" > Tales Of Eclipse, Helios Blood</h1>
+<h2 align="center">Chapter 1: Eric Intrudes</h2>
+<h3 align="center">Scene 2:Everyone arrives</h3>
+
+<div class="container">
+<canvas id="canvas" width="800" height="600" >
+Browser does not support html5
+</canvas>
+<img id ="bg" alt="" src="backgrounds/silohuette.png" width="800" height="600"> <br/>
+<img id="character" alt="" src="backgrounds/smoke1.png" >
+
+<audio src="sounds/unpleasanpremo.mp3" autoplay="autoplay"></audio>
+
+<table>
+<tr align="center">
+<td><form method="get" action="Chapter1Scene1.html"><button type="submit">Back</button></form></td>
+
+<td><form method="get" action="ChapterSelect.html"><button type="submit">Home</button></form></td>
+
+<td><form method="get" action="Chapter1Scene3.html"><button type="submit">Next</button></form></td>
+</tr>
+</table>
+
+</div>
+
+</body>
+</html>
